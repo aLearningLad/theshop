@@ -28,7 +28,7 @@ const GeneralSignInInputs = () => {
         toast.success("Signing in...");
       }
     } catch (error) {
-      toast.error("Somethign went wrong");
+      toast.error("Something went wrong");
       console.log(error);
     }
   };
