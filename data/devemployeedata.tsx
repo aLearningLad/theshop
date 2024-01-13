@@ -1,0 +1,58 @@
+import { Idevemployeedata } from "@/types";
+
+export const devemployeedata: Idevemployeedata[] = [
+  {
+    name: "Timmy",
+    surname: "van Zyl",
+    email: "tvanzyl@gmail.com",
+    leaveStatus: false,
+    passport: "1289893849398",
+    role: "General Worker",
+    id: "1",
+  },
+  {
+    name: "Thabiso",
+    surname: "Mokoena",
+    email: "teemok@gmail.com",
+    leaveStatus: true,
+    passport: "12898938493",
+    role: "Manager",
+    id: "2",
+  },
+  {
+    name: "Magaret",
+    surname: "Olivier",
+    email: "maggie87@gmail.com",
+    leaveStatus: true,
+    passport: "37882392489281",
+    role: "General Worker",
+    id: "3",
+  },
+  {
+    name: "Magaret",
+    surname: "Olivier",
+    email: "maggie87@gmail.com",
+    leaveStatus: true,
+    passport: "37882392489281",
+    role: "General Worker",
+    id: "4",
+  },
+  {
+    name: "Magaret",
+    surname: "Olivier",
+    email: "maggie87@gmail.com",
+    leaveStatus: false,
+    passport: "37882392489281",
+    role: "General Worker",
+    id: "5",
+  },
+  {
+    name: "Magaret",
+    surname: "Olivier",
+    email: "maggie87@gmail.com",
+    leaveStatus: false,
+    passport: "37882392489281",
+    role: "General Worker",
+    id: "6",
+  },
+];
