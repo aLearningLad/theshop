@@ -10,8 +10,12 @@ import bcrypt from "bcryptjs";
 const authOptions: AuthOptions = {
   providers: [
     CredentialsProvider({
+      id: "username-login", //NEWLY ADDED TO TEST
       name: "credentials",
-      credentials: {},
+      credentials: {
+        email: { label: "email", type: "text", placeholder: "email" },
+        password: { label: "password", type: "password" },
+      },
 
       async authorize(credentials: any) {
         const { email, password } = credentials;

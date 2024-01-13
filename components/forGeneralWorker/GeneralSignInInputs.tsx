@@ -29,7 +29,7 @@ const GeneralSignInInputs = () => {
       }
     } catch (error) {
       toast.error("Somethign went wrong");
-      console.log(`Unable to sign in: ${error}`);
+      console.log(error);
     }
   };
 
