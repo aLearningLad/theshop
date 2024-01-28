@@ -1,10 +1,11 @@
 "use client";
 
 import Link from "next/link";
-import { ChangeEvent, FormEvent, useState } from "react";
+import { ChangeEvent, FormEvent, MouseEventHandler, useState } from "react";
 import toast from "react-hot-toast";
 import { useRouter } from "next/navigation";
-import { Irealemployee } from "@/types";
+import { Ipayslip, Irealemployee } from "@/types";
+import { UploadPayslipUI } from ".";
 
 const AdminEditUI: React.FC<Irealemployee> = ({
   name,
@@ -31,7 +32,13 @@ const AdminEditUI: React.FC<Irealemployee> = ({
         headers: {
           "Content-type": "application/json",
         },
-        body: JSON.stringify({ newName, newSurname, newPassport, newEmail }),
+        body: JSON.stringify({
+          newName,
+          newSurname,
+          newPassport,
+          newEmail,
+          newPayslip,
+        }),
       });
 
       if (res.ok) {
@@ -48,16 +55,51 @@ const AdminEditUI: React.FC<Irealemployee> = ({
   const [newSurname, setNewSurname] = useState<string>(surname);
   const [newPassport, setNewPassport] = useState<string>(passport);
   const [newEmail, setNewEmail] = useState<string>(email);
+  const [uploadModal, setUploadModal] = useState<boolean>(false);
+  const [newPayslip, setNewPayslip] = useState({
+    drivelink: "",
+    forMonth: "",
+  });
+
+  const handleModal = (e: React.MouseEvent) => {
+    e.preventDefault();
+    setUploadModal((prev) => !prev);
+    uploadModal
+      ? toast.success("Saving changes...")
+      : toast.success("Opening...");
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setNewPayslip((prev: Ipayslip) => ({
+      ...prev,
+      [e.target.name]: e.target.value,
+    }));
+    console.log(newPayslip.drivelink, newPayslip.forMonth);
+  };
 
   return (
-    <div className="w-full h-full bg-black flex flex-col p-2 md:p-5">
-      <header className=" w-full h-[5%] flex justify-start items-center">
+    <div className="w-full h-full bg-black flex flex-col p-2 md:p-5 relative">
+      {uploadModal && (
+        <UploadPayslipUI
+          handleModal={handleModal}
+          handleChange={handleChange}
+          newPayslip={newPayslip}
+        />
+      )}
+      <header className=" w-full h-[5%] flex justify-between items-center">
         <Link
           className="text-2xl flex justify-center px-3 md:px-5 rounded-md md:rounded-lg active:bg-white/70 duration-500 ease-in-out transition items-center h-full bg-white lg:text-lg text-black"
           href="/managerdash"
         >
           Return
         </Link>
+
+        <button
+          onClick={handleModal}
+          className="text-2xl flex justify-center px-3 md:px-5 rounded-md md:rounded-lg active:bg-white/70 duration-500 ease-in-out transition items-center h-full bg-white lg:text-lg text-black"
+        >
+          Upload Payslip for {name}
+        </button>
       </header>
       <div className="w-full h-[90%] flex justify-center items-center p-4">
         <div className="relative w-full gap-3 md:gap-5 h-full flex flex-col items-center justify-center text-center bg-neutral-600/40 rounded-md md:rounded-lg lg:rounded-xl p-4">

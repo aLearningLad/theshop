@@ -1,5 +1,10 @@
 import mongoose, { Schema, model, models } from "mongoose";
 
+const payslipSchema = new Schema({
+  drivelink: String,
+  forMonth: String,
+});
+
 const employeeSchema = new Schema(
   {
     name: {
@@ -46,6 +51,7 @@ const employeeSchema = new Schema(
       type: Boolean,
       required: true,
     },
+    payslips: [payslipSchema],
   },
   { timestamps: true }
 );

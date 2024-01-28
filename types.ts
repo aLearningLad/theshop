@@ -63,3 +63,9 @@ export type Irealemployee = {
   passport: string;
   id: string;
 };
+
+export type Ipayslip = {
+  _id?: string | number;
+  drivelink: string | any;
+  forMonth: string | any;
+};

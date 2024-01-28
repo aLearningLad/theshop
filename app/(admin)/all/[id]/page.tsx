@@ -1,5 +1,3 @@
-"use client";
-
 import { AdminEditUI } from "@/components/forAdmin";
 import { Iparams } from "@/types";
 

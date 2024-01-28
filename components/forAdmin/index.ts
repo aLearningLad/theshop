@@ -6,3 +6,4 @@ export { default as RevokeLeaveBtn } from "./RevokeLeaveBtn";
 export { default as AdminEditUI } from "./AdminEditUI";
 export { default as DeregisterBtn } from "./DeregisterBtn";
 export { default as SafeDash } from "./SafeDash";
+export { default as UploadPayslipUI } from "./UploadPayslipUI";

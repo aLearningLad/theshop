@@ -12,13 +12,20 @@ export async function PUT(req: NextRequest, { params }: { params: Iparams }) {
     newSurname: surname,
     newPassport: passport,
     newEmail: email,
+    newPayslip: payslips,
   } = await req.json();
 
   if (mongoose.connection.readyState !== 1) {
     await connectToDB();
   }
 
-  await Employee.findByIdAndUpdate(id, { name, surname, passport, email });
+  await Employee.findByIdAndUpdate(id, {
+    name,
+    surname,
+    passport,
+    email,
+    payslips,
+  });
 
   return NextResponse.json(
     { message: `${name} details updated` },

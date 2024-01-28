@@ -8,3 +8,5 @@ export { default as GrantedLeavesUI } from "./GrantedLeavesUI";
 export { default as PendingLeavesUI } from "./PendingLeavesUI";
 export { default as PublicViewCard } from "./PublicViewCard";
 export { default as ReturnBtn } from "./ReturnBtn";
+export { default as PayslipsUI } from "./PayslipsUI";
+export { default as PayslipCard } from "./PayslipCard";
