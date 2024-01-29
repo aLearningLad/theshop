@@ -20,7 +20,7 @@ export type Idevemployeedata = {
   leaveStatus: boolean;
   id: string;
   index?: number;
-  _id: string;
+  // _id: string;
 };
 
 export type Idevleavedata = {

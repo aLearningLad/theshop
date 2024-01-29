@@ -39,7 +39,7 @@ const SeeAll = async () => {
         </Link>
       </header>
       <div className="w-full overflow-auto p-2 md:p-5 lg:p-7 h-[80%] gap-3 md:gap-5 bg-neutral-400/20 rounded-md md:rounded-lg lg:rounded-xl xl:rounded-2xl grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-        {employeedata.map((item: Idevemployeedata, index: number) => (
+        {employeedata.map((item: any, index: number) => (
           <AdminEmployeeCard
             key={item._id}
             email={item.email}
@@ -50,7 +50,6 @@ const SeeAll = async () => {
             role={item.role}
             id={item._id}
             index={index}
-            _id={item._id}
           />
         ))}
       </div>
