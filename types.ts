@@ -20,6 +20,7 @@ export type Idevemployeedata = {
   leaveStatus: boolean;
   id: string;
   index?: number;
+  _id: string;
 };
 
 export type Idevleavedata = {
@@ -61,7 +62,7 @@ export type Irealemployee = {
   moreInfo?: string;
   leaveStatus?: boolean;
   passport: string;
-  id: string;
+  id?: string;
 };
 
 export type Ipayslip = {

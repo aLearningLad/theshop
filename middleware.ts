@@ -2,11 +2,11 @@ export { default } from "next-auth/middleware";
 
 export const config = {
   matcher: [
-    // "/admindash",
-    // "/all",
+    "/admindash",
+    "/all",
     "/leaves",
-    // "/new",
-    // "/payslips",
+    "/new",
+    "/payslips",
     "/generalapplyleave",
     "/generalprofile",
     "/managerapplyforleave",
