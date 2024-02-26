@@ -3,8 +3,10 @@ import Link from "next/link";
 import { IoReturnUpBackSharp } from "react-icons/io5";
 
 const fetchLeaves = async () => {
+  const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+
   try {
-    const res = await fetch(`/api/getallleave`, {
+    const res = await fetch(`${apiUrl}/api/getallleave`, {
       cache: "no-store",
     });
 
