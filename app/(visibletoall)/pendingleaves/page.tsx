@@ -5,7 +5,7 @@ import { IoReturnUpBackSharp } from "react-icons/io5";
 
 const fetchLeaves = async () => {
   try {
-    const res = await fetch(`/api/getallleave`, {
+    const res = await fetch(`http://localhost:3000/api/getallleave`, {
       cache: "no-store",
     });
 

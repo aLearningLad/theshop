@@ -14,7 +14,7 @@ const DenyLeaveBtn: React.FC<DenyLeaveBtnProps> = ({ id }) => {
 
   const handleDeny = async (e: FormEvent) => {
     e.preventDefault();
-    const res = await fetch(`/api/getallleave?id=${id}`, {
+    const res = await fetch(`http://localhost:3000/api/getallleave?id=${id}`, {
       method: "DELETE",
     });
     if (res.ok) {

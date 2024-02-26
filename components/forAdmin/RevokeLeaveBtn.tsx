@@ -25,7 +25,7 @@ const RevokeLeaveBtn: React.FC<RevokeLeaveBtnProps> = ({
     e.preventDefault();
 
     try {
-      const res = await fetch(`/api/revokeleave/${id}`, {
+      const res = await fetch(`http://localhost:3000/api/revokeleave/${id}`, {
         method: "PUT",
         headers: {
           "Content-type": "application/json",

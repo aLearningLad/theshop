@@ -40,7 +40,7 @@ const ManagerLeaveUI = () => {
       leaveStatus !== true
     ) {
       try {
-        const res = await fetch("/api/applyforleave", {
+        const res = await fetch("http://localhost:3000/api/applyforleave", {
           cache: "no-store",
           method: "POST",
           headers: {

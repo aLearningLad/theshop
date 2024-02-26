@@ -3,7 +3,7 @@ import { Iparams } from "@/types";
 
 const getEmployeeById = async (id: string) => {
   try {
-    const res = await fetch(`/api/allemployees/${id}`, {
+    const res = await fetch(`http://localhost:3000/api/allemployees/${id}`, {
       cache: "no-store",
     });
 

@@ -4,7 +4,7 @@ const MyPayslips = () => {
   const getEmployeePayslips = async (id: string | null | undefined) => {
     "use server";
     try {
-      const res = await fetch(`/api/viaemail/${id}`, {
+      const res = await fetch(`http://localhost:3000/api/viaemail/${id}`, {
         cache: "no-store",
       });
 
