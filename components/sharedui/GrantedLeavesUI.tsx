@@ -6,7 +6,7 @@ const fetchLeaves = async () => {
   const apiUrl = process.env.NEXT_PUBLIC_API_URL;
 
   try {
-    const res = await fetch(`http://127.0.0.1:3000/api/getallleave`, {
+    const res = await fetch(`/api/getallleave`, {
       cache: "no-store",
     });
 
