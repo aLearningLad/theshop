@@ -1,4 +1,5 @@
 import { PublicViewCard, ReturnBtn, SignOutBtn } from "@/components/sharedui";
+import { Ipublicviewcard } from "@/types";
 import Link from "next/link";
 import { IoReturnUpBackSharp } from "react-icons/io5";
 
@@ -25,7 +26,11 @@ const PendingLeaves = async () => {
     const res = await fetchLeaves();
 
     if (!res) {
-      return <div>Error fetching leave applications...</div>;
+      return (
+        <div className="w-full h-full flex justify-center items-center bg-black text-white text-2xl">
+          Error fetching leave applications...
+        </div>
+      );
     }
 
     const { leaveapplications } = res;
@@ -37,7 +42,7 @@ const PendingLeaves = async () => {
         </header>
         {leaveapplications.length > 0 ? (
           <div className="w-full overflow-auto p-2 md:p-5 lg:p-7 h-[85%] gap-3 md:gap-5 bg-neutral-400/20 rounded-md md:rounded-lg lg:rounded-xl xl:rounded-2xl grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3">
-            {leaveapplications.map((item: any) => (
+            {leaveapplications.map((item: Ipublicviewcard) => (
               <PublicViewCard
                 fromDay={item.startDay}
                 fromMonth={item.startMonth}

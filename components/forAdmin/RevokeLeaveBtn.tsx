@@ -8,9 +8,16 @@ import toast from "react-hot-toast";
 interface RevokeLeaveBtnProps {
   id: string;
   name?: string;
+  email: string | undefined;
+  leaveLength: number | undefined;
 }
 
-const RevokeLeaveBtn: React.FC<RevokeLeaveBtnProps> = ({ id, name }) => {
+const RevokeLeaveBtn: React.FC<RevokeLeaveBtnProps> = ({
+  id,
+  name,
+  email,
+  leaveLength,
+}) => {
   const [leaveStatus, setLeaveStatus] = useState<boolean>(false);
   const router = useRouter();
 
@@ -23,7 +30,7 @@ const RevokeLeaveBtn: React.FC<RevokeLeaveBtnProps> = ({ id, name }) => {
         headers: {
           "Content-type": "application/json",
         },
-        body: JSON.stringify({ leaveStatus }),
+        body: JSON.stringify({ leaveStatus, email, leaveLength }),
       });
 
       if (res.ok) {

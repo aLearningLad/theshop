@@ -4,13 +4,21 @@ import toast from "react-hot-toast";
 import { TiTick } from "react-icons/ti";
 import { FormEvent, useState } from "react";
 import { useRouter } from "next/navigation";
+import { error } from "console";
 
 interface ApproveLeaveBtnProps {
   id: string;
   name?: string;
+  leaveLength: number | undefined;
+  email: string | undefined;
 }
 
-const ApproveLeaveBtn: React.FC<ApproveLeaveBtnProps> = ({ id, name }) => {
+const ApproveLeaveBtn: React.FC<ApproveLeaveBtnProps> = ({
+  id,
+  name,
+  leaveLength,
+  email,
+}) => {
   const [leaveStatus, setLeaveStatus] = useState<boolean>(true);
   const router = useRouter();
 
@@ -23,7 +31,7 @@ const ApproveLeaveBtn: React.FC<ApproveLeaveBtnProps> = ({ id, name }) => {
         headers: {
           "Content-type": "application/json",
         },
-        body: JSON.stringify({ leaveStatus }),
+        body: JSON.stringify({ leaveStatus, leaveLength, email }),
       });
 
       if (res.ok) {
@@ -33,6 +41,7 @@ const ApproveLeaveBtn: React.FC<ApproveLeaveBtnProps> = ({ id, name }) => {
         toast.error(
           `Something went wrong. Cannot approve leave request by ${name}`
         );
+
         router.refresh();
       }
     } catch (error) {

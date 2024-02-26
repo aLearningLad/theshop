@@ -11,7 +11,7 @@ const GeneralWorkerProfile = () => {
   const { data: session } = useSession();
 
   const id = session?.user?.email;
-  console.log(session);
+  // console.log(session);
   return (
     <div className="h-screen w-full bg-black p-2 md:p-5 items-center flex flex-col">
       <header className="w-full h-[10%] flex justify-between px-3 lg:px-5 py-2 gap-1 lg:gap-0">

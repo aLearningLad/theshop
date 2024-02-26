@@ -1,3 +1,4 @@
+import { monthConversions } from "@/utils/monthConversions";
 import { FaClockRotateLeft } from "react-icons/fa6";
 import { GrUserManager } from "react-icons/gr";
 import { RiAdminFill } from "react-icons/ri";
@@ -31,7 +32,7 @@ const PublicViewCard: React.FC<PublicViewCardProps> = ({
   return (
     <div
       className={`w-full ${
-        leaveStatus === true ? "flex" : "hidden"
+        leaveStatus === false ? "flex" : "hidden"
       } relative h-[80vh] sm:h-[75vh] md:h-[60vh] flex-col items-center justify-center text-center bg-white rounded-md md:rounded-lg lg:rounded-xl xl:rounded-2xl p-2 md:p-4 lg:p-6`}
     >
       <h3 className=" text-3xl lg:text-2xl font-semibold flex gap-2">
@@ -56,11 +57,11 @@ const PublicViewCard: React.FC<PublicViewCardProps> = ({
       )}
       <div className="w-full flex justify-center items-center gap-1 mt-2 md:mt-3">
         <p className="text-lg font-semibold">
-          {fromDay} {fromMonth}
+          {fromDay} {monthConversions(fromMonth)}
         </p>
         <p>to</p>
         <p className="text-lg font-semibold">
-          {untilDay} {untilMonth}
+          {untilDay} {monthConversions(untilMonth)}
         </p>
       </div>
     </div>

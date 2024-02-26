@@ -54,6 +54,8 @@ const Leaves = async () => {
                   untilMonth={item.untilMonth}
                   key={item.id}
                   whom="admin"
+                  leaveLength={item.leaveLength}
+                  email={item.email}
                 />
               ))}
             </div>

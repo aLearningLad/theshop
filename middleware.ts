@@ -11,7 +11,7 @@ export const config = {
     "/generalprofile",
     "/managerapplyforleave",
     "/managerdash",
-    "/managerapproveleave",
+    "/managersapproveleave",
     "/managerseeworkers",
   ],
 };

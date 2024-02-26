@@ -1,4 +1,4 @@
-import mongoose, { Schema, model, models } from "mongoose";
+import mongoose, { Schema, models } from "mongoose";
 
 const leaveSchema = new Schema(
   {
@@ -48,6 +48,10 @@ const leaveSchema = new Schema(
     },
     isApplied: {
       type: Boolean,
+      required: true,
+    },
+    leaveLength: {
+      type: Number,
       required: true,
     },
   },

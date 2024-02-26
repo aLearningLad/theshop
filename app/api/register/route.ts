@@ -18,6 +18,8 @@ export async function POST(req: NextRequest) {
       leaveStatus,
       passport,
       isApplied,
+      leaveDays,
+      remainingDays,
     } = await req.json();
 
     const securePassword = await bcrypt.hash(password, 10);
@@ -34,6 +36,8 @@ export async function POST(req: NextRequest) {
         leaveStatus,
         passport,
         isApplied,
+        leaveDays,
+        remainingDays,
       });
       if (res.ok) {
         console.log(`${name} added to DB`);
@@ -57,6 +61,8 @@ export async function POST(req: NextRequest) {
         moreInfo,
         leaveStatus,
         isApplied,
+        leaveDays,
+        remainingDays,
       });
 
       if (res.ok) {

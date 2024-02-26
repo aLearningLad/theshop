@@ -1,5 +1,6 @@
 import { EmployeeLeaveCard } from "@/components/sharedui";
 import { devleavedata } from "@/data/devleavedata";
+import { Idevemployeedata } from "@/types";
 import Link from "next/link";
 import React from "react";
 import { IoReturnUpBackSharp } from "react-icons/io5";
@@ -17,7 +18,7 @@ const fetchAllLeaveApplications = async () => {
     const data = await res.json();
     return data;
   } catch (error) {
-    console.error(error);
+    console.log(error);
     return null;
   }
 };
@@ -41,7 +42,7 @@ const ManagersApproveLeave = async () => {
         </header>
         {leaveapplications.length > 0 ? (
           <div className="w-full overflow-auto p-2 md:p-5 lg:p-7 h-[85%] gap-3 md:gap-5 bg-neutral-400/20 rounded-md md:rounded-lg lg:rounded-xl xl:rounded-2xl grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3">
-            {leaveapplications.map((item: any) => (
+            {leaveapplications.map((item: Idevemployeedata | any) => (
               <EmployeeLeaveCard
                 fromDay={item.startDay}
                 fromMonth={item.startMonth}
@@ -54,6 +55,8 @@ const ManagersApproveLeave = async () => {
                 untilMonth={item.untilMonth}
                 key={item.id}
                 whom="manager"
+                leaveLength={item.leaveLength}
+                email={item.email}
               />
             ))}
           </div>

@@ -18,7 +18,7 @@ const SignOutBtn = () => {
   return (
     <button
       onClick={handleSignOut}
-      className="text-2xl flex justify-center px-3 md:px-5 rounded-md md:rounded-lg active:bg-white/70 duration-500 ease-in-out transition items-center h-full bg-white lg:text-lg text-black"
+      className="text-[14px] xl:text-2xl flex justify-center px-3 md:px-5 rounded-md md:rounded-lg active:bg-white/70 duration-500 ease-in-out transition items-center h-full bg-white lg:text-lg text-black"
     >
       Sign out
     </button>

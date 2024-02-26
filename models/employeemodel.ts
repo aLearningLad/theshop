@@ -52,7 +52,16 @@ const employeeSchema = new Schema(
       required: true,
     },
     payslips: [payslipSchema],
+    leaveDays: {
+      type: Number,
+      required: true,
+    },
+    remainingDays: {
+      type: Number,
+      required: true,
+    },
   },
+
   { timestamps: true }
 );
 

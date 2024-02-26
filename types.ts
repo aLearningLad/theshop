@@ -1,3 +1,21 @@
+export type Ipublicviewcard = {
+  _id?: any;
+  id?: any;
+  name: string;
+  surname: string;
+  role: string;
+  email: string;
+  startDay: string;
+  startMonth: string;
+  untilDay: string;
+  untilMonth: string;
+  leaveType: string;
+  leaveStatus: boolean;
+  sickNote: boolean;
+  isApplied: boolean;
+  leaveLength: number;
+};
+
 export type Ihomelinks = {
   title: string;
   img: React.ReactElement;
@@ -34,6 +52,8 @@ export type Idevleavedata = {
   id: string;
   role: string;
   whom?: string;
+  leaveLength?: number;
+  email?: string;
 };
 
 export type Igeneralsigninlinks = {

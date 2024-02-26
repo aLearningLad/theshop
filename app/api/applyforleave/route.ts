@@ -18,7 +18,10 @@ export async function POST(req: NextRequest) {
       leaveStatus,
       sickNote,
       isApplied,
+      leaveLength,
     } = await req.json();
+
+    console.log(`User applying is named ${name}`);
 
     if (mongoose.connection.readyState === 1) {
       const res = await leaveapplication.create({
@@ -34,11 +37,13 @@ export async function POST(req: NextRequest) {
         leaveStatus,
         sickNote,
         isApplied,
+        leaveLength,
       });
       if (res.ok) {
         console.log(`Leave application by ${name} added to DB`);
       } else {
         console.log(`Unable to log leave application by ${name}`);
+        console.log(`This is leavelength: ${leaveLength}`);
       }
       return NextResponse.json(
         {
@@ -61,6 +66,7 @@ export async function POST(req: NextRequest) {
         leaveStatus,
         sickNote,
         isApplied,
+        leaveLength,
       });
       if (res.ok) {
         console.log(`Leave application by ${name} added to DB`);
@@ -75,7 +81,7 @@ export async function POST(req: NextRequest) {
       );
     }
   } catch (error) {
-    console.log(`Unable to log leave application by ${name}`);
+    console.log(`Unable to log leave application by user. Error is: ${error}`);
     return NextResponse.json(
       { message: `This error occured: ${error}` },
       { status: 500 }

@@ -1,32 +1,38 @@
-import { Idevleavedata } from "@/types";
+import { monthConversions } from "@/utils/monthConversions";
+import { FaClockRotateLeft } from "react-icons/fa6";
 import { GrUserManager } from "react-icons/gr";
 import { RiAdminFill } from "react-icons/ri";
 import { SiCodechef } from "react-icons/si";
-import { FaClockRotateLeft } from "react-icons/fa6";
 import { TiTick } from "react-icons/ti";
-import { ApproveLeaveBtn } from ".";
-import { RevokeLeaveBtn } from "../forAdmin";
-import DenyLeaveBtn from "./DenyLeaveBtn";
-import { monthConversions } from "@/utils/monthConversions";
 
-const EmployeeLeaveCard: React.FC<Idevleavedata> = ({
-  fromDay,
-  fromMonth,
-  id,
+interface PublicViewGrantedProps {
+  name: string;
+  surname: string;
+  role: string;
+  leaveStatus: boolean;
+  isApplied: boolean;
+  fromMonth: string;
+  fromDay: string;
+  untilDay: string;
+  untilMonth: string;
+  id: string;
+}
+
+const PublicViewGranted: React.FC<PublicViewGrantedProps> = ({
+  isApplied,
   leaveStatus,
   name,
+  role,
   surname,
+  fromMonth,
+  fromDay,
   untilDay,
   untilMonth,
-  role,
-  whom,
-  leaveLength,
-  email,
 }) => {
   return (
     <div
       className={`w-full ${
-        whom === "manager" && role === "Manager" ? "hidden" : "flex"
+        leaveStatus === true ? "flex" : "hidden"
       } relative h-[80vh] sm:h-[75vh] md:h-[60vh] flex-col items-center justify-center text-center bg-white rounded-md md:rounded-lg lg:rounded-xl xl:rounded-2xl p-2 md:p-4 lg:p-6`}
     >
       <h3 className=" text-3xl lg:text-2xl font-semibold flex gap-2">
@@ -58,38 +64,8 @@ const EmployeeLeaveCard: React.FC<Idevleavedata> = ({
           {untilDay} {monthConversions(untilMonth)}
         </p>
       </div>
-      {leaveStatus ? (
-        whom === "admin" ? (
-          <div className="absolute h-[15%] px-2 md:px-5 gap-2 bottom-3 w-full flex lg:flex-row flex-col items-center lg:items-center justify-center">
-            <RevokeLeaveBtn
-              id={id}
-              name={name}
-              key={id}
-              email={email}
-              leaveLength={leaveLength}
-            />
-          </div>
-        ) : (
-          <div className="absolute h-[20%] text-lg xl:text-[14px] px-2 md:px-5 gap-2 bottom-3 w-full flex lg:flex-row flex-col items-center lg:items-end justify-center">
-            <p>You approved this</p>
-            <p>
-              Only <b>Admin</b> can revoke it
-            </p>
-          </div>
-        )
-      ) : (
-        <div className=" absolute h-[20%] px-2 md:px-5 gap-2 bottom-3 w-full flex lg:flex-row flex-col items-center lg:items-end justify-center">
-          <ApproveLeaveBtn
-            id={id}
-            name={name}
-            leaveLength={leaveLength}
-            email={email}
-          />
-          <DenyLeaveBtn id={id} />
-        </div>
-      )}
     </div>
   );
 };
 
-export default EmployeeLeaveCard;
+export default PublicViewGranted;

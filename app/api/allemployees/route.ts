@@ -7,7 +7,7 @@ export async function GET(req: NextRequest) {
   if (mongoose.connection.readyState === 1) {
     try {
       const employeedata = await Employee.find();
-      console.log(`Fetched all leave applications: ${employeedata}`);
+      // console.log(`Fetched all leave applications: ${employeedata}`);
       return NextResponse.json({ employeedata }, { status: 200 });
     } catch (error) {
       console.log(`Error fetching leave applications: ${error}`);

@@ -1,6 +1,7 @@
 import { PublicViewCard, ReturnBtn, SignOutBtn } from "@/components/sharedui";
 import Link from "next/link";
 import { IoReturnUpBackSharp } from "react-icons/io5";
+import PublicViewGranted from "./PublicViewGranted";
 
 const fetchLeaves = async () => {
   try {
@@ -38,7 +39,7 @@ const GrantedLeavesUI = async () => {
         {leaveapplications.length > 0 ? (
           <div className="w-full overflow-auto p-2 md:p-5 lg:p-7 h-[85%] gap-3 md:gap-5 bg-neutral-400/20 rounded-md md:rounded-lg lg:rounded-xl xl:rounded-2xl grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3">
             {leaveapplications.map((item: any) => (
-              <PublicViewCard
+              <PublicViewGranted
                 fromDay={item.startDay}
                 fromMonth={item.startMonth}
                 id={item._id}
@@ -55,7 +56,7 @@ const GrantedLeavesUI = async () => {
           </div>
         ) : (
           <div className="w-full h-[85%] bg-black flex justify-center items-center text-center text-white text-2xl">
-            No pending leave applications...
+            No approvals yet...
           </div>
         )}
       </div>
