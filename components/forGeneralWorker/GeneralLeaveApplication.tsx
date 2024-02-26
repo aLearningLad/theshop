@@ -32,12 +32,9 @@ const GeneralLeaveApplication = () => {
     console.log(`The email object: ${useremail}`);
 
     try {
-      const res = await fetch(
-        `http://localhost:3000/api/getLeaveBalance/${useremail}`,
-        {
-          cache: "no-store",
-        }
-      );
+      const res = await fetch(`/api/getLeaveBalance/${useremail}`, {
+        cache: "no-store",
+      });
       if (!res.ok) {
         throw new Error(`Something went wrong. Error status: ${res.status}`);
       }
@@ -99,7 +96,7 @@ const GeneralLeaveApplication = () => {
         isApplied === true
       ) {
         try {
-          const res = await fetch("http://localhost:3000/api/applyforleave", {
+          const res = await fetch("/api/applyforleave", {
             cache: "no-store",
             method: "POST",
             headers: {

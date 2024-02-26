@@ -5,7 +5,7 @@ import Link from "next/link";
 
 const fetchAllLeaveApplications = async () => {
   try {
-    const res = await fetch("http://localhost:3000/api/getallleave", {
+    const res = await fetch("/api/getallleave", {
       cache: "no-store",
     });
 

@@ -25,12 +25,9 @@ const DeregisterBtn: React.FC<DeregisterBtnProps> = ({ name, surname, id }) => {
   const handleDeregister = async () => {
     try {
       if (isSure) {
-        const res = await fetch(
-          `http://localhost:3000/api/allemployees?id=${id}`,
-          {
-            method: "DELETE",
-          }
-        );
+        const res = await fetch(`/api/allemployees?id=${id}`, {
+          method: "DELETE",
+        });
 
         if (res.ok) {
           toast.success(`Deleting ${name} from database...`);

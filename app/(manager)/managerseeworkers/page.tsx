@@ -6,7 +6,7 @@ import { IoReturnUpBackSharp } from "react-icons/io5";
 
 const fetchAllWorkers = async () => {
   try {
-    const res = await fetch("http://localhost:3000/api/allemployees", {
+    const res = await fetch("/api/allemployees", {
       cache: "no-store",
     });
 
