@@ -5,7 +5,7 @@ import PublicViewGranted from "./PublicViewGranted";
 
 const fetchLeaves = async () => {
   try {
-    const res = await fetch(`http://localhost:3000/api/getallleave`, {
+    const res = await fetch(`/api/getallleave`, {
       cache: "no-store",
     });
 
