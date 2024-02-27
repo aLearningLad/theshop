@@ -37,7 +37,7 @@ const ViewAllUI = () => {
   if (error) {
     return (
       <div className=" w-full h-screen flex-col bg-black text-white text-2xl flex justify-center items-center text-center">
-        Error fetching leave applications...
+        Error fetching data...
         <SignOutBtn />
       </div>
     );

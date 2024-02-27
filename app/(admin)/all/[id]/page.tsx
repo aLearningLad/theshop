@@ -37,7 +37,11 @@ const IndividualEmployee = ({ params }: { params: Iparams }) => {
   }, [id]);
 
   if (loading) {
-    return <div>Loading...</div>;
+    return (
+      <div className="w-full h-screen flex justify-center items-center text-3xl bg-black text-white">
+        Loading...
+      </div>
+    );
   }
 
   if (error) {
