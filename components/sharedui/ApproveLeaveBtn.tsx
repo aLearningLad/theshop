@@ -26,7 +26,7 @@ const ApproveLeaveBtn: React.FC<ApproveLeaveBtnProps> = ({
     e.preventDefault();
 
     try {
-      const res = await fetch(`http://localhost:3000/api/getallleave/${id}`, {
+      const res = await fetch(`/api/getallleave/${id}`, {
         method: "PUT",
         headers: {
           "Content-type": "application/json",
