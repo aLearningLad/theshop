@@ -82,7 +82,7 @@ export type Irealemployee = {
   moreInfo?: string;
   leaveStatus?: boolean;
   passport: string;
-  id?: string;
+  id?: string | string[] | any;
 };
 
 export type Ipayslip = {

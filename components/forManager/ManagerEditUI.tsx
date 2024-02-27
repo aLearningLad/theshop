@@ -27,7 +27,7 @@ const ManagerEditUI: React.FC<Irealemployee> = ({
     e.preventDefault();
 
     try {
-      const res = await fetch(`http://localhost:3000/api/allemployees/${id}`, {
+      const res = await fetch(`/api/allemployees/${id}`, {
         cache: "no-store",
         method: "PUT",
         headers: {
