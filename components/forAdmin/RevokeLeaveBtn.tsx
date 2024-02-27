@@ -35,6 +35,8 @@ const RevokeLeaveBtn: React.FC<RevokeLeaveBtnProps> = ({
 
       if (res.ok) {
         toast.success(`Leave application by ${name} has been revoked`);
+        location.reload();
+
         router.refresh();
       } else {
         toast.error(

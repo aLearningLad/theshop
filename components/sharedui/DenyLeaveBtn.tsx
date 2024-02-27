@@ -19,6 +19,7 @@ const DenyLeaveBtn: React.FC<DenyLeaveBtnProps> = ({ id }) => {
     });
     if (res.ok) {
       toast.success("Leave denied");
+      location.reload();
       router.refresh();
     }
   };
