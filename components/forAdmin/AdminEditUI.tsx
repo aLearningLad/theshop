@@ -26,7 +26,7 @@ const AdminEditUI: React.FC<Irealemployee> = ({
     e.preventDefault();
 
     try {
-      const res = await fetch(`http://localhost:3000/api/allemployees/${id}`, {
+      const res = await fetch(`/api/allemployees/${id}`, {
         cache: "no-store",
         method: "PUT",
         headers: {
@@ -89,7 +89,7 @@ const AdminEditUI: React.FC<Irealemployee> = ({
       <header className=" w-full h-[5%] flex justify-between items-center">
         <Link
           className="text-2xl flex justify-center px-3 md:px-5 rounded-md md:rounded-lg active:bg-white/70 duration-500 ease-in-out transition items-center h-full bg-white lg:text-lg text-black"
-          href="/managerdash"
+          href="/all"
         >
           Return
         </Link>
