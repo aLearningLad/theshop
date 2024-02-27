@@ -11,4 +11,4 @@ export { default as ReturnBtn } from "./ReturnBtn";
 export { default as PayslipsUI } from "./PayslipsUI";
 export { default as PayslipCard } from "./PayslipCard";
 export { default as LBModal } from "./LBModal";
-export { default as PublicViewGrantedProps } from "./PublicViewGranted";
+export { default as PublicViewGranted } from "./PublicViewGranted";
