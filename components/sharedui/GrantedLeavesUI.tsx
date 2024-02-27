@@ -77,7 +77,6 @@
 
 import { useEffect, useState } from "react";
 import { PublicViewCard, ReturnBtn, SignOutBtn } from "@/components/sharedui";
-import { IoReturnUpBackSharp } from "react-icons/io5";
 import { Ipublicviewcard } from "@/types";
 
 const GrantedLeavesUI = () => {
