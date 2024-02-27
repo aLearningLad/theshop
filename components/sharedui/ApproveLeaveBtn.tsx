@@ -36,6 +36,7 @@ const ApproveLeaveBtn: React.FC<ApproveLeaveBtnProps> = ({
 
       if (res.ok) {
         toast.success(`Leave application by ${name} has been approved`);
+        location.reload();
         router.refresh();
       } else {
         toast.error(

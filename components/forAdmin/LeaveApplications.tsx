@@ -46,7 +46,7 @@ const LeaveApplications = () => {
   return (
     <div className=" h-fit w-full">
       {loading ? (
-        <div className=" h-full w-full bg-black text-white flex flex-col gap-3 lg:gap-7 justify-center items-center">
+        <div className=" h-screen w-full bg-black text-white flex flex-col gap-3 lg:gap-7 justify-center items-center">
           <h3>Just a minute...</h3>
         </div>
       ) : (
